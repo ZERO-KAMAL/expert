@@ -81,7 +81,27 @@ body {
       #main .first h5 a {
         color: #511de5;
         text-decoration: none;
-        pointer-events: none; }
+        pointer-events: none;
+        color: #253839;
+        position: relative; }
+        #main .first h5 a::before {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0%;
+          height: 100%;
+          color: #511de5;
+          border-right: 2px solid #511de5;
+          overflow: hidden;
+          animation: animate 6s linear infinite; }
+@keyframes animate {
+  0%,
+          10%,
+          100% {
+    width: 0; }
+  70%,90% {
+    width: 100%; } }
     #main .first img {
       position: absolute;
       top: 100%;
@@ -367,7 +387,7 @@ body {
       margin-bottom: 50px; } }
 
 #footer {
-  background: url(image/Rectangle.png) repeat 100%;
+  background: url(/image/Rectangle.png) repeat 100%;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0 150px; }

@@ -1,0 +1,558 @@
+@import "var";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 16px;
+  line-height: 35px;
+  letter-spacing: 0.3px;
+  transition: 0.3s;
+}
+#main {
+  background: url(image/Object.png) repeat fixed 100%;
+  background-size: cover;
+  background-position-y: -90px;
+
+  .navigation {
+    .navbar-brand {
+      img {
+        transition: 0.3s;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+    ul {
+      margin-left: 55px;
+      .active {
+        color: $tc !important;
+        position: relative;
+        span {
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background-image: linear-gradient(
+            to right,
+            white,
+            #157cf8,
+            $tc,
+            #157cf8,
+            white
+          );
+          border-radius: 5px 25px;
+        }
+      }
+      li {
+        margin-left: 20px;
+        position: relative;
+        transition: 0.3s;
+        &:hover {
+          span {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-image: linear-gradient(
+              to right,
+              white,
+              #157cf8,
+              $tc,
+              #157cf8,
+              white
+            );
+            border-radius: 5px 25px;
+          }
+        }
+
+        a {
+          font-size: 16px;
+          font-weight: 500;
+          color: black !important;
+          &:hover {
+            color: $tc !important;
+          }
+          button {
+            border-radius: 50px;
+            padding: 8px 30px;
+            background-image: linear-gradient(to right, $tc, #157cf8);
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 600px) {
+      li {
+        button {
+          margin-left: 20%;
+        }
+        &:hover {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .first {
+    height: 87vh;
+    .content {
+      margin-top: 100px;
+      a {
+        text-align: right;
+      }
+      button {
+        border: none;
+        background-color: #f6f6f6;
+        border-radius: 50px;
+        padding: 8px 30px;
+        color: black !important;
+        font-size: 14px;
+        &:hover {
+          background-image: linear-gradient(to right, $tc, #157cf8);
+          color: white !important;
+        }
+        i {
+          font-weight: 300;
+        }
+      }
+    }
+    h5 {
+      font-weight: 800;
+      text-align: right;
+      font-size: 55px;
+      a {
+        color: $tc;
+        text-decoration: none;
+        pointer-events: none;
+        color: #253839;
+        position: relative;
+        &::before {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0%;
+          height: 100%;
+          color: $tc;
+          border-right: 2px solid $tc;
+          overflow: hidden;
+          animation: animate 6s linear infinite;
+        }
+        @keyframes animate {
+          0%,
+          10%,
+          100% {
+            width: 0;
+          }
+          70%,90% {
+            width: 100%;
+          }
+        }
+      }
+    }
+    img {
+      position: absolute;
+      top: 100%;
+      right: 0%;
+    }
+  }
+}
+
+#advert {
+  background-image: url(image/Highli.png);
+  background-size: cover;
+  margin-bottom: 80px;
+  h4 {
+    color: white;
+    font-size: 33px;
+  }
+  img {
+    position: absolute;
+    top: -50%;
+    left: 0px;
+    z-index: 1;
+    width: 300px;
+  }
+  @media screen and (max-width: 600px) {
+    margin-top: 252px;
+    h4 {
+      text-align: left;
+      margin-top: 22px;
+    }
+    img {
+      position: absolute;
+      top: -28%;
+      left: 0px;
+      z-index: 1;
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    margin-top: 120px;
+    img {
+      position: absolute;
+      top: -20%;
+      left: 0px;
+      z-index: 1;
+      width: 300px;
+    }
+    h4 {
+      text-align: left;
+    }
+  }
+}
+#productivity {
+  background: url(image/Bg.png) repeat fixed 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 80px;
+  padding: 150px;
+  width: 100%;
+  h5 {
+    font-size: 33px;
+    font-weight: 800;
+    text-align: start;
+    line-height: 45px;
+  }
+  p {
+    text-align: inherit;
+    margin-top: 28px;
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 100px;
+    color: linear-gradient(to right, $tc, #157cf8) !important;
+    font-weight: 700;
+  }
+  a {
+    margin-top: 100px;
+    text-decoration: none;
+    position: relative;
+    p {
+      position: absolute;
+      bottom: 7px;
+      right: 25px;
+      color: black;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+    a {
+      p {
+        position: absolute;
+
+        color: black;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    a {
+      p {
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        color: black;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+#slider {
+  margin-bottom: 80px;
+  padding: 30px 0;
+  background: white !important;
+  transition: 0.3s;
+  img {
+    filter: grayscale(1);
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+  .owl-nav button {
+    padding: 2px;
+    background-color: $tc;
+  }
+
+  .owl-next {
+    position: absolute;
+    top: -40%;
+    right: 0%;
+  }
+  .owl-prev {
+    position: absolute;
+    top: -40%;
+    right: 5%;
+  }
+  .owl-prev span,
+  .owl-next span {
+    padding: 0px 10px;
+    text-align: center;
+    background-color: $tc;
+    color: white;
+    line-height: 10px;
+    font-size: 20px;
+    border: 1px solid $tc;
+    border-radius: 0;
+  }
+}
+#approach {
+  background: url(image/Bgg.png) repeat fixed 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 250px;
+  padding: 0 150px;
+  .text {
+    padding: 130px;
+    margin-top: -70%;
+    text-align: start;
+    color: white;
+    h4,
+    h6 {
+      font-size: 20px;
+    }
+    h4 {
+      font-weight: 500 !important;
+    }
+  }
+  img {
+    width: 80%;
+  }
+  h5 {
+    font-size: 33px;
+    font-weight: 800;
+    text-align: start;
+    line-height: 45px;
+  }
+  button {
+    border: none;
+    background-color: #f6f6f6;
+    border-radius: 50px;
+    padding: 8px 30px;
+    color: black !important;
+    font-size: 14px;
+    &:hover {
+      background-image: linear-gradient(to right, $tc, #157cf8);
+      color: white !important;
+    }
+    i {
+      font-weight: 300;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+    margin-bottom: 100px;
+    .text {
+      margin-top: -83%;
+      padding: 100px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    margin-bottom: 50px;
+    .text,
+    img {
+      display: none;
+    }
+  }
+}
+#campaign {
+  margin-bottom: 250px;
+  padding: 0 150px;
+  h5 {
+    font-size: 33px;
+    font-weight: 800;
+    text-align: start;
+    line-height: 45px;
+  }
+  p {
+    text-align: inherit;
+    margin-top: 28px;
+    font-size: 16px;
+  }
+  img {
+    margin-right: 20px;
+    width: 100%;
+  }
+  h6 {
+    margin-top: 28px;
+    font-size: 18px;
+    font-weight: bold;
+    i {
+      margin-right: 25px;
+      font-size: 24px;
+      color: $tc;
+    }
+  }
+  button {
+    margin-top: 35px;
+    border-radius: 50px;
+    padding: 8px 30px;
+    background-image: linear-gradient(to right, $tc, #157cf8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 200;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+    margin-bottom: 100px;
+  }
+  @media screen and (max-width: 480px) {
+    margin-bottom: 50px;
+  }
+}
+#feedback {
+  padding: 0 150px;
+  margin-bottom: 250px;
+  h5 {
+    font-size: 33px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 45px;
+    margin-bottom: 80px;
+  }
+  p {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 16px;
+  }
+  .box {
+    padding: 40px;
+    border: 1px solid #efefef;
+    img {
+      margin-left: 25%;
+    }
+    h6 {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+    margin-bottom: 100px;
+  }
+  @media screen and (max-width: 480px) {
+    margin-bottom: 50px;
+  }
+}
+#inspriational {
+  padding: 0 150px;
+  margin-bottom: 250px;
+  h5 {
+    font-size: 33px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 45px;
+    margin-bottom: 100px;
+  }
+  .box {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0.7;
+    transition: 0.3;
+    &:hover {
+      opacity: 1;
+      p {
+        color: $tc;
+      }
+    }
+    p {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 60px;
+      border-bottom: 1px solid $tc;
+    }
+    img {
+      margin-left: 40%;
+    }
+    h5 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    h6 {
+      font-size: 14px;
+      text-align: center;
+      margin-top: -100px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+    margin-bottom: 100px;
+  }
+  @media screen and (max-width: 480px) {
+    margin-bottom: 50px;
+  }
+}
+#footer {
+  background: url(image/Rectangle.png) repeat 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 150px;
+  .box {
+    padding: 50px 300px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    background-color: white;
+    h5 {
+      font-size: 33px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 45px;
+      margin-bottom: 100px;
+    }
+    p {
+      text-align: start;
+      font-size: 16px;
+    }
+    .Firstpara {
+      color: $tc;
+      font-weight: 600;
+    }
+    .secondpara,
+    .para {
+      border-bottom: 1px solid $tc;
+      padding-bottom: 20px;
+    }
+    .thirdpara {
+      font-weight: 600;
+    }
+    @media screen and (max-width: 600px) {
+      padding: 20px;
+    }
+  }
+  .copyright {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: end;
+    color: white;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    font-size: 16px;
+    color: white;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+    .copyright {
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+}

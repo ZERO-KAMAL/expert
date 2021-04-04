@@ -148,7 +148,8 @@ body {
           100% {
             width: 0;
           }
-          70%,90% {
+          70%,
+          90% {
             width: 100%;
           }
         }
@@ -159,9 +160,25 @@ body {
       top: 100%;
       right: 0%;
     }
+    @media screen and (max-width: 480px) {
+      .content {
+        h5 {
+          text-align: start;
+          a {
+            color: $tc;
+                      
+            &::before {
+              display: none;
+            }
+          }
+        }
+        a {
+          text-align: start;
+        }
+      }
+    }
   }
 }
-
 #advert {
   background-image: url(image/Highli.png);
   background-size: cover;

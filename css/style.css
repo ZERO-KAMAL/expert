@@ -100,12 +100,22 @@ body {
           10%,
           100% {
     width: 0; }
-  70%,90% {
+  70%,
+          90% {
     width: 100%; } }
     #main .first img {
       position: absolute;
       top: 100%;
       right: 0%; }
+    @media screen and (max-width: 480px) {
+      #main .first .content h5 {
+        text-align: start; }
+        #main .first .content h5 a {
+          color: #511de5; }
+          #main .first .content h5 a::before {
+            display: none; }
+      #main .first .content a {
+        text-align: start; } }
 
 #advert {
   background-image: url(image/Highli.png);
